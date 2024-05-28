@@ -1,0 +1,74 @@
+% Author: Juan M. Gandarias
+% Assistant Professor 
+% University of Malaga
+% email: jmgandarias@uma.es
+% web: jmgandarias.com
+%
+% May 2024
+%
+% Inspired by the memoirthesis.tex authored by Victor Baena
+%
+
+% Memoir class loads useful packages by default (see manual).
+\documentclass[a4paper,11pt,leqno, twoside, oldfontcommandsCreación]{memoir} 
+
+\usepackage{Support/UMA_template}
+
+
+\begin{document}
+
+
+
+\include{Support/UMA_template}
+
+\frontmatter
+\pagenumbering{roman}
+
+%
+\input{Support/cover}
+\clearemptydoublepage
+%
+\input{Support/abstract}
+\clearemptydoublepage
+%
+\input{Support/authorship}
+\clearemptydoublepage
+%
+
+\maxtocdepth{subsection}
+\tableofcontents*
+\addtocontents{toc}{\par\nobreak \mbox{}\hfill{\bf Página}\par\nobreak}
+\clearemptydoublepage
+%
+\listoffigures
+\addtocontents{lof}{\par\nobreak\textbf{{\scshape Figura} \hfill Página}\par\nobreak}
+\clearemptydoublepage
+%
+\listoftables
+\addtocontents{lot}{\par\nobreak\textbf{{\scshape Tabla} \hfill Página}\par\nobreak}
+\clearpage
+%
+%
+%
+% The bulk of the document is delegated to these chapter files in
+% subdirectories.
+\mainmatter
+
+\chapter{Introducción}
+
+\section{Sección 1}
+
+\chapter{Conclusiones}
+
+% Apparently the guidelines don't say anything about citations or
+% bibliography styles so I guess we can use anything.
+\backmatter
+\bibliographystyle{unsrt}
+\refstepcounter{chapter}
+\bibliography{thesisbiblio}
+\clearemptydoublepage
+%
+% Add index
+%\printindex
+%   
+\end{document}
