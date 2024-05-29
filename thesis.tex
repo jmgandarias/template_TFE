@@ -10,9 +10,11 @@
 %
 
 % Memoir class loads useful packages by default (see manual).
-\documentclass[a4paper,11pt,leqno, twoside, oldfontcommandsCreación]{memoir} 
+\documentclass[a4paper,11pt,leqno, twoside]{memoir} 
 
 \usepackage{Support/UMA_template}
+
+
 
 
 \begin{document}
@@ -56,16 +58,21 @@
 
 \chapter{Introducción}
 
+\initial{A}quí empieza el capítulo 1. Al principio de cada capítulo podemos poner un pequeño párrafo que describa qué hay en él.
+
 \section{Sección 1}
+
+
+\lipsum[2-10]
 
 \chapter{Conclusiones}
 
 % Apparently the guidelines don't say anything about citations or
 % bibliography styles so I guess we can use anything.
 \backmatter
-\bibliographystyle{unsrt}
+\bibliographystyle{IEEEtran}
 \refstepcounter{chapter}
-\bibliography{thesisbiblio}
+\bibliography{biblio}
 \clearemptydoublepage
 %
 % Add index
