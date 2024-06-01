@@ -87,8 +87,8 @@
 \makeoddfoot{myvf}{}{\thepage}{} 
 \makeevenfoot{myvf}{}{\thepage}{} 
 \makeheadrule{myvf}{\textwidth}{\normalrulethickness} 
-\makeevenhead{myvf}{\small\textsc{\leftmark}}{}{} 
-\makeoddhead{myvf}{}{}{\small\textsc{TRABAJO FIN DE M\'ASTER}}
+\makeevenhead{myvf}{\small\textsf{\textcolor{uma_gray_dark}{\leftmark}}}{}{} 
+\makeoddhead{myvf}{}{}{\small\textsf{\textcolor{uma_gray_dark}{\tfeTitle}}}
 \pagestyle{myvf}
 %
 % Oscar's command (it works):
@@ -163,7 +163,6 @@
 \usepackage{parskip}
 \usepackage{cite}
 \usepackage{hyperref}	
-\usepackage{sectsty}
 \usepackage{listings}
 \usepackage{lettrine}
 \usepackage[paper=a4paper,left=30mm,right=30mm,top=30mm,bottom=30mm]{geometry}
