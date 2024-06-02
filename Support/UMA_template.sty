@@ -9,10 +9,55 @@
 % Inspired by the memorithesis template authored by Victor Baena
 %
 
+% % Listado de paquetes
+\usepackage{import}
+\usepackage[T1]{fontenc} 
+\usepackage{lipsum}					
+\usepackage[centertags]{amsmath}
+\usepackage{amsfonts} 		
+\usepackage{stmaryrd}					
+\usepackage{amssymb}					
+\usepackage{amsthm}					
+\usepackage{newlfont}					
+\usepackage{layouts}					
+\usepackage{graphicx}					
+\usepackage{longtable,rotating}			
+\usepackage[utf8]{inputenc}			
+\usepackage{colortbl}					
+\usepackage{wasysym}					
+\usepackage{mathrsfs}					
+\usepackage{float}						
+\usepackage{upgreek}					
+\usepackage{latexsym}					
+\usepackage{natbib}		
+\usepackage{url}						
+\usepackage{color}                    				
+\usepackage{memhfixc}					
+\usepackage{enumerate}					
+\usepackage{footnote}					
+\usepackage{microtype}					
+\usepackage{rotfloat}					
+\usepackage{alltt}						
+\usepackage{lmodern}
+\usepackage[spanish]{babel} 
+\usepackage{fancyhdr}
+\usepackage{mathtools}
+\usepackage{verbatim}
+\usepackage{pdfpages}
+\usepackage{tocbibind}
+\usepackage{subfig}
+\usepackage{anysize}
+\usepackage{titlesec}
+\usepackage{eurosym}
+\usepackage{parskip}
+\usepackage{cite}
+\usepackage{hyperref}	
+\usepackage{listings}
+\usepackage{lettrine}
+\usepackage[paper=a4paper,left=30mm,right=30mm,top=30mm,bottom=30mm]{geometry}
 
-% Declare figure/table as a subfloat.
-% \newsubfloat{figure}
-% \newsubfloat{table}
+
+				
 % Better page layout for A4 paper, see memoir manual.
 \settrimmedsize{297mm}{210mm}{*}
 \setlength{\trimtop}{0pt} 
@@ -117,56 +162,6 @@
 
 
 
-
-
-% % Listado de paquetes
-\usepackage{import}
-\usepackage{fouriernc}
-\usepackage[T1]{fontenc}
-\usepackage{lipsum}					
-\usepackage{amsfonts} 					
-\usepackage[centertags]{amsmath}			
-\usepackage{stmaryrd}					
-\usepackage{amssymb}					
-\usepackage{amsthm}					
-\usepackage{newlfont}					
-\usepackage{layouts}					
-\usepackage{graphicx}					
-\usepackage{longtable,rotating}			
-\usepackage[utf8]{inputenc}			
-\usepackage{colortbl}					
-\usepackage{wasysym}					
-\usepackage{mathrsfs}					
-\usepackage{float}						
-\usepackage{upgreek}					
-\usepackage{latexsym}					
-\usepackage{natbib}		
-\usepackage{url}						
-\usepackage{color}                    				
-\usepackage{memhfixc}					
-\usepackage{enumerate}					
-\usepackage{footnote}					
-\usepackage{microtype}					
-\usepackage{rotfloat}					
-\usepackage{alltt}						
-\usepackage{lmodern}
-\usepackage[spanish]{babel} 
-\usepackage{fancyhdr}
-\usepackage{mathtools}
-\usepackage{verbatim}
-\usepackage{pdfpages}
-\usepackage{tocbibind}
-\usepackage{subfig}
-\usepackage{anysize}
-\usepackage{titlesec}
-\usepackage{eurosym}
-\usepackage{parskip}
-\usepackage{cite}
-\usepackage{hyperref}	
-\usepackage{listings}
-\usepackage{lettrine}
-\usepackage[paper=a4paper,left=30mm,right=30mm,top=30mm,bottom=30mm]{geometry}
-				
 %Reduce widows  (the last line of a paragraph at the start of a page) and orphans 
 % (the first line of paragraph at the end of a page)
 \widowpenalty=1000
@@ -248,6 +243,12 @@ backgroundcolor=\color{gray75},
 																
 \setcounter{secnumdepth}{3} 
 \setlength{\parindent}{4mm}
+
+\addtocontents{toc}{\par\nobreak \mbox{}\hfill{\bf Página}\par\nobreak}
+
+\addtocontents{lof}{\par\nobreak\textbf{{Figura} \hfill \textsf{Página}}\par\nobreak}
+
+\addtocontents{lot}{\par\nobreak\textbf{{Tabla} \hfill \textsf{Página}}\par\nobreak}
 
 
 

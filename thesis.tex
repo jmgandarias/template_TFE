@@ -15,8 +15,6 @@
 \usepackage{Support/UMA_template}
 
 
-
-
 \begin{document}
 
 
@@ -52,16 +50,13 @@
 %
 
 \maxtocdepth{subsection}
-\tableofcontents*
-\addtocontents{toc}{\par\nobreak \mbox{}\hfill{\bf Página}\par\nobreak}
+{\sffamily\tableofcontents*}
 \clearemptydoublepage
 %
-\listoffigures
-\addtocontents{lof}{\par\nobreak\textbf{{\scshape Figura} \hfill Página}\par\nobreak}
+{\sffamily\listoffigures}
 \clearemptydoublepage
 %
-\listoftables
-\addtocontents{lot}{\par\nobreak\textbf{{\scshape Tabla} \hfill Página}\par\nobreak}
+{\sffamily\listoftables}
 \clearpage
 
 
@@ -81,6 +76,8 @@
 
 
 \lipsum[2-10]
+
+
 
 \chapter{Conclusiones}
 
