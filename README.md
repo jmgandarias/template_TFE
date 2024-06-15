@@ -33,3 +33,15 @@ The previous paper has the following bibitem:
 - Try to organize the bibliography as follows:
     - Follow this order: Books, Journals, Conferences, Others
     - Name the bibitem as: *First_author_surnameYearFirst_word_of_the_title_of_the_paper*
+
+# UMA_template
+There are two files that define the UMA_templated used in this document: *UMA_template.sty*, and *UMA_template.tex*. They are (and should be) used for different things
+
+## 
+
+# Author
+This template has been authored by Juan M. Gandarias, Assistant Professor at the University of Malaga, inspired by the memorithesis template authored by Victor Baena
+%
+
+# Use it
+There is an updated version of this project available in Overleaf at [this link](https://www.overleaf.com/read/hzprjsxdxczd#9b4fce)

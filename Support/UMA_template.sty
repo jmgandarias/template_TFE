@@ -4,12 +4,10 @@
 % email: jmgandarias@uma.es
 % web: jmgandarias.com
 %
-% May 2024
-%
 % Inspired by the memorithesis template authored by Victor Baena
 %
 
-% % Listado de paquetes
+% Packages list
 \usepackage{import}
 \usepackage[T1]{fontenc} 
 \usepackage{lipsum}					
@@ -55,8 +53,6 @@
 \usepackage{listings}
 \usepackage{lettrine}
 \usepackage[paper=a4paper,left=30mm,right=30mm,top=30mm,bottom=30mm]{geometry}
-
-
 				
 % Better page layout for A4 paper, see memoir manual.
 \settrimmedsize{297mm}{210mm}{*}
@@ -73,13 +69,6 @@
 %
 \frenchspacing
 
-%
-% UoB guidelines:
-%
-% Text should be in double or 1.5 line spacing, and font size should be
-% chosen to ensure clarity and legibility for the main text and for any
-% quotations and footnotes. Margins should allow for eventual hard binding.
-%
 % Note: This is automatically set by memoir class. Nevertheless \OnehalfSpacing 
 % enables double spacing but leaves single spaced for captions for instance. 
 \OnehalfSpacing 
@@ -90,8 +79,6 @@
 %
 % Chapter style (taken and slightly modified from Lars Madsen Memoir Chapter 
 % Styles document
-
-
 \usepackage{calc,soul,fourier}
 \makeatletter 
 \newlength\dlf@normtxtw 
@@ -123,10 +110,8 @@
 } 
 \makeatother 
 \chapterstyle{daleifmodif}
-%
-% UoB guidelines:
-%
-% The pages should be numbered consecutively at the bottom centre of the
+
+% The pages are numbered consecutively at the bottom centre of the
 % page.
 \makepagestyle{myvf} 
 \makeoddfoot{myvf}{}{\thepage}{} 
@@ -135,38 +120,24 @@
 \makeevenhead{myvf}{\small\textsf{\textcolor{uma_gray_dark}{\leftmark}}}{}{} 
 \makeoddhead{myvf}{}{}{\small\textsf{\textcolor{uma_gray_dark}{\tfeTitle}}}
 \pagestyle{myvf}
-%
-% Oscar's command (it works):
+
 % Fills blank pages until next odd-numbered page. Used to emulate single-sided
 % frontmatter. This will work for title, abstract and declaration. Though the
 % contents sections will each start on an odd-numbered page they will
 % spill over onto the even-numbered pages if extending beyond one page
 % (hopefully, this is ok).
 \newcommand{\clearemptydoublepage}{\newpage{\thispagestyle{empty}\cleardoublepage}}
-%
-%
+
 % Creates indexes for Table of Contents, List of Figures, List of Tables and Index
 \makeindex
 % \printglossaries below creates a list of abbreviations. \gls and related
 % commands are then used throughout the text, so that latex can automatically
 % keep track of which abbreviations have already been defined in the text.
-%
-% The import command enables each chapter tex file to use relative paths when
-% accessing supplementary files. For example, to include
-% chapters/brewing/images/figure1.png from chapters/brewing/brewing.tex we can
-% use
-% \includegraphics{images/figure1}
-% instead of
-% \includegraphics{chapters/brewing/images/figure1}
-
-
-
 
 %Reduce widows  (the last line of a paragraph at the start of a page) and orphans 
 % (the first line of paragraph at the end of a page)
 \widowpenalty=1000
 \clubpenalty=1000
-
 
 %An initial of the very first character of the content
 \newcommand{\initial}[1]{%
@@ -174,12 +145,13 @@
 		\color{uma_blue_dark}
      		{#1}}{}}
 
+% Default family font: sf
 \renewcommand{\familydefault}{\sfdefault}
 
-\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+% Defines a new command for the horizontal lines, change thickness here
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} %
 
-
-% % Colores de marca UMA https://www.uma.es/servicio-comunicacion/info/1946/marcas-oficiales/?set_language=es
+% Official UMA colors https://www.uma.es/servicio-comunicacion/info/1946/marcas-oficiales/?set_language=es
 \definecolor{uma_blue_dark}{RGB}{0,46,93}
 \definecolor{uma_blue_light}{RGB}{43,145,208}
 \definecolor{uma_blue_water}{RGB}{0,174,199}
@@ -190,8 +162,6 @@
 \definecolor{uma_green}{RGB}{121,193,70}
 \definecolor{uma_yellow}{RGB}{255,233,84}
 
-
-
 % Enable colored hyperlinks
 \hypersetup{
     colorlinks=true,
@@ -201,8 +171,7 @@
     urlcolor=uma_blue_light
 }
 
-
-% Para escribir trozos de código
+% If you want to write pieces of code
 \definecolor{gray97}{gray}{.97}
 \definecolor{gray75}{gray}{.75}
 \definecolor{gray45}{gray}{.45}
@@ -227,7 +196,7 @@ numberstyle=\tiny,
 numberfirstline = false,
 breaklines=true,
 }
-% minimizar fragmentado de listados
+
 \lstnewenvironment{listing}[1][]
 {\lstset{#1}\pagebreak[0]}{\pagebreak[0]}
 
@@ -240,16 +209,15 @@ backgroundcolor=\color{gray75},
 {language=C,
 }
 
-
-
-																
+% Have also the subsubsections numbered in the table of contents						
 \setcounter{secnumdepth}{3} 
+
+% Indentation length
 \setlength{\parindent}{4mm}
 
+% Add table of contets, list of figures and list of tables with specific names
 \addtocontents{toc}{\par\nobreak \mbox{}\hfill{\bf Página}\par\nobreak}
-
 \addtocontents{lof}{\par\nobreak\textbf{{Figura} \hfill \textsf{Página}}\par\nobreak}
-
 \addtocontents{lot}{\par\nobreak\textbf{{Tabla} \hfill \textsf{Página}}\par\nobreak}
 
 
