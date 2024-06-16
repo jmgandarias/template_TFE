@@ -1,7 +1,21 @@
 # Template_TFE
-Template for the Bachelor and Master theses at the school of Engineering of the University of Malaga
+Template for the Bachelor and Master theses at the school of Engineering of the University of Malaga. 
+
+TFE stands for *Trabajo Fin de Estudios*, which means *Final Degree Project*.
 
 # Files and Folders Organization
+
+## Template
+There are two files that define the UMA_templated used in this document: *UMA_template.sty*, and *UMA_template.tex*. They are (and should be) used for different things
+
+### UMA_template.sty
+This file imports the packages used in the template and define the configuration parameters. If you want to include new packages, you can include them here
+
+### UMA_template.tex
+This file change the default name of some items to have them in Spanish (e.g., Chapter = Capítulo, Figure = Figura), and defines some useful variables used along the project (e.g., TFE title, Author, Supervisor).
+
+## Support
+This folder contains support and pre-thesis document
 
 ## Images
 A folder that contains all the images of the project. If possible, try to use images in small size and vectorial format (i.e., PDF).
@@ -34,10 +48,6 @@ The previous paper has the following bibitem:
     - Follow this order: Books, Journals, Conferences, Others
     - Name the bibitem as: *First_author_surnameYearFirst_word_of_the_title_of_the_paper*
 
-# UMA_template
-There are two files that define the UMA_templated used in this document: *UMA_template.sty*, and *UMA_template.tex*. They are (and should be) used for different things
-
-## 
 
 # Author
 This template has been authored by Juan M. Gandarias, Assistant Professor at the University of Malaga, inspired by the memorithesis template authored by Victor Baena

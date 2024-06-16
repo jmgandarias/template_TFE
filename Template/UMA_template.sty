@@ -27,7 +27,6 @@
 \usepackage{float}						
 \usepackage{upgreek}					
 \usepackage{latexsym}					
-\usepackage{natbib}		
 \usepackage{url}						
 \usepackage{color}                    				
 \usepackage{memhfixc}					
@@ -52,6 +51,7 @@
 \usepackage{hyperref}	
 \usepackage{listings}
 \usepackage{lettrine}
+\usepackage{minitoc} 
 \usepackage[paper=a4paper,left=30mm,right=30mm,top=30mm,bottom=30mm]{geometry}
 				
 % Better page layout for A4 paper, see memoir manual.
@@ -149,7 +149,7 @@
 \renewcommand{\familydefault}{\sfdefault}
 
 % Defines a new command for the horizontal lines, change thickness here
-\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} %
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} 
 
 % Official UMA colors https://www.uma.es/servicio-comunicacion/info/1946/marcas-oficiales/?set_language=es
 \definecolor{uma_blue_dark}{RGB}{0,46,93}
@@ -219,6 +219,8 @@ backgroundcolor=\color{gray75},
 \addtocontents{toc}{\par\nobreak \mbox{}\hfill{\bf Página}\par\nobreak}
 \addtocontents{lof}{\par\nobreak\textbf{{Figura} \hfill \textsf{Página}}\par\nobreak}
 \addtocontents{lot}{\par\nobreak\textbf{{Tabla} \hfill \textsf{Página}}\par\nobreak}
+
+
 
 
 

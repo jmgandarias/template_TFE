@@ -4,22 +4,18 @@
 % email: jmgandarias@uma.es
 % web: jmgandarias.com
 %
-% May 2024
-%
 % Inspired by the memoirthesis.tex authored by Victor Baena
 %
 
 % Memoir class loads useful packages by default (see manual).
 \documentclass[a4paper,11pt,leqno, twoside]{memoir} 
 
-\usepackage{Support/UMA_template}
-
+\usepackage{Template/UMA_template}
+\dominitoc
 
 \begin{document}
 
-
-
-\include{Support/UMA_template}
+\include{Template/UMA_template}
 
 \frontmatter
 \pagenumbering{roman}
@@ -27,7 +23,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%
 %
-% PREVIO A LA MEMORIA
+%  BEFFORE THE THESIS
 %
 %%%%%%%%%%%%%%%%%%%%%%%%
 \input{Support/cover}
@@ -50,57 +46,136 @@
 %
 
 \maxtocdepth{subsection}
+\dominitoc
 {\sffamily\tableofcontents*}
 \clearemptydoublepage
 %
-{\sffamily\listoffigures}
+{\sffamily\listoffigures}\mtcaddchapter
 \clearemptydoublepage
 %
-{\sffamily\listoftables}
+{\sffamily\listoftables}\mtcaddchapter
 \clearpage
 
 
 %%%%%%%%%%%%%%%%%%%%%%%
 %
-%   MEMORIA
+%     THE THESIS
 %
 %%%%%%%%%%%%%%%%%%%%%%%%
 \mainmatter
 
 \pagenumbering{arabic}
 \chapter{Introducción}
+\label{cap:introduccion}
+\minitoc
+\vspace{1cm}
+\initial{A}quí empieza el capítulo 1. Al principio de cada capítulo podemos poner un pequeño párrafo (sinopsis) que describa qué hay en él.
+\newpage
 
-\initial{A}quí empieza el capítulo 1. Al principio de cada capítulo podemos poner un pequeño párrafo que describa qué hay en él.
+\section{Motivación}
+\label{sec:motivacion}
 
-\section{Sección 1}
+Esta sección debería introducir el problema que se trata en este proyecto. Debería ir desde un punto de vista más general hasta uno más específico (como si fuera una pirámide. Este es el enfoque que tiene que tener toda la memoria). Evitar incluir imágenes que no aportan información (esto es un documento técnico, no un artículo de divulgación, presentación o página web). Se podría incluir alguna imagen si ilustra, de alguna forma, el problema y ayuda a motivar y justificar la relevancia del trabajo. El texto se debe apoyar, en la medida de lo posible, de referencias en las que se demuestre lo que se está diciendo (p.ej., ``Los recientes avances en robótica e inteligencia han aportado muchos beneficios a la sociedad en diversos campos que van desde la fabricación~\cite{ajoudani2018progress}, hasta la medicina~\cite{malik2019overview}.'') Las referencias deben ser, siempre que sea posible, artículos científicos (journals, si es posible) o libros. Artículos divulgativos también se pueden utilizar (sin abusar, y especificando que son divulgativos). Evitar usar enlaces a blogs o páginas web.
+
+Algunas reglas/consejos: 
+
+\begin{itemize}
+    \item Todas las figuras, tablas, referencias y apéndices se deben citar desde el texto.
+    \item Utilizar el comando \lstinline{\ref} para citar, excepto las referencias bibliográficas, para ello usar \lstinline{\cite}. P.ej., \textit{``Los experimentos se presentan en el capítulo~\ref{cap:experimentos_resultados}.''}
+    \item Las figuras y tablas deben aparecer en la misma página o en la siguiente a aquella en la que son citadas siempre que sea posible. La idea es que el lector lea el texto y sólo vaya a consultar una figura/tabla cuando el texto se lo indica. El texto no debería indicarle al lector que vaya a consultar algo en una página anterior (que ya ha leído), a no ser que sea una figura de la que ya se ha hablado antes y se necesite volver a comentar algún aspecto en una parte posterior de la memoria.
+    \item Las referencias a páginas web deberían hacerse en forma de \textit{footnote}. P.ej., Este template es \textit{Open Source}~\footnote{La plantilla utilizada en este documento se encuentra disponible en el siguiente \href{https://github.com/jmgandarias/template_TFE}{repositorio de GitHub}}.
+    \item Si se van a poner varias imágenes sobre algo en concreto (p.ej., varias vistas de una pieza, o un par de gráficas de resultados de un mismo experimento) se pueden poner en la misma figura nombrando a cada subfigura con (a), (b), (c), etc, en lugar de poner varias figuras una detrás de otra y dejando mucho espacio en blanco a los lados o haciéndola muy grande.
+    \item El tamaño de las figuras debe ser tal que se vean correctamente en el PDF impreso (o cuando el PDF en formato digital está al 100\%,) es decir, sin zoom. Una buena forma de saber qué tamaño deberían tener las imágenes es si las letras que aparezcan en la figura son más o menos del mismo tamaño que las letras del texto. Si son más grandes: Hacer la figura más pequeña o el tamaño de la fuente dentro de la imagen más pequeño. Si son más pequeñas: Aumentar el tamaño de la imagen o de la fuente de la letra dentro de la imagen.
+    \item Las figuras deben tener formato vectorial (PDF) en la medida de lo posible. Si se saca una foto con el móvil, lo ideal es etiquetar aquellos componentes que sean de interés para el lector. Para hacer eso lo más cómodo es importar la imagen con la mayor resolución posible en algún programa que te permita añadir las etiquetas y guardar el resultado en PDF. \textit{Inkscape} es gratis y está muy bien para esto. \textit{PowerPoint} también es buena opción. 
+    \item La fuente de las etiquetas deberían ser blancas (si el fondo es oscuro) o negras (si el fondo es claro). Si el fondo tenga tonos oscuros y claros, se puede poner un borde blanco a las letras negras (para resaltarlas) o poner la etiqueta con la fuente negra encima de un recuadro de fondo blanco opaco o blanco semitransparente). Se pueden utilizar fuentes de algún color específico para las etiquetas si estas siguen un código de colores específico a lo largo de la memoria (p.ej., los ejes XYZ suelen seguir el código de colores RGB).
+    \item La fuente de las imágenes debería ser sin \textit{serif}~\footnote{Las fuentes con serif suelen asociarse a estilos tradicionales, formales o académicos y mejoran la legibilidad del texto, creando una guía visual para que los ojos sigan las líneas del texto. La ausencia de serif puede hacer que el texto sea más nítido, claro y sencillo, haciendo las fuentes sin serif ideales para etiquetas en imágenes o títulos de capítulos o secciones (trozos cortos de texto). Más sobre el uso de fuentes con y sin serif \href{https://www.linkedin.com/advice/1/what-some-advantages-disadvantages-using-serif?lang=es&originalSubdomain=es}{en este enlace}}, es decir, letras como las de los títulos de las secciones y capítulos de la memoria (p.ej., \textit{Arial}. 
+    \item Los captions de las figuras deben servir para describir de forma general el contenido de la figura. Ejemplo de caption malo: \textit{``Resultados de los experimentos''.} Ejemplo de caption bueno: \textit{``Resultados estadísticos de todos los sujetos del experimento incluyendo el ratio de activación e intensidad de vibración de cada dispositivo, el tiempo de finalización de la tarea, y el error de seguimiento.''}
+\end{itemize}
+
+\section{Estado del arte}
+\label{sec:estado_del_arte}
+
+Esta sección debe describir qué hay ya hecho en relación al trabajo que aquí se presenta. Poner todas las referencias que sea necesario. Ir siempre desde lo más general a lo más específico. Se pueden añadir subsecciones si es necesario. Se puede añadir alguna imagen, diagrama o esquema, si sirven para ayudar a describir o ilustrar los trabajos de los que habla en el texto. Por ejemplo, un diagrama en forma de árbol que ayude a clasificar diferentes tipos de tecnología, o una imagen tipo \textit{collage} que incluya varios trabajos relevantes relacionados con el tema.
+
+\section{Objetivos y contribución}
+\label{sec:objetivos_contribucion}
+
+Después de haber explicado el problema, justificada su relevancia, y hecho una revisión de soluciones que existen, en esta sección hay que presentar los objetivos del proyecto. Explicar desde un punto de vista general qué se ha hecho en este proyecto de cara a resolver el problema que se trata y que vendrá explicado en detalle más adelante en la memoria y se evaluará cómo funciona en los experimentos.
+
+\section{Estructura de la memoria}
+\label{sec:estructura_memoria}
+
+Esta sección es corta normalmente. Únicamente hay que describir de forma muy general qué se presenta en los siguientes capítulos (y/o secciones) de la memoria en una o dos frases.
+
+\clearemptydoublepage
+\chapter{Contexto y Marco Teórico}
+\label{sec:contexto_marco_teorico}
+\minitoc
+\vspace{1cm}
+\initial{A}quí empieza el capítulo 2. Al principio de cada capítulo podemos poner un pequeño párrafo (sinopsis) que describa qué hay en él. Este capítulo tiene que describir todo lo relacionado con el proyecto que necesita ser explicado para entenderlo bien, pero que no haya sido desarrollado/planteado/implementado por el alumno (teoría fundamental, desarrollos previos, herramientas/librerías de terceros utilizadas, etc). Se pueden usar secciones, subsecciones, imágenes y referencias si es necesario y ayuda a entender mejor el texto. Debe tener un punto de vista más bien general, sencillo y didáctico. Tiene que ser fácil de entender. Si hay alguna cosa muy específica o muy 
+\newpage
+
+\clearemptydoublepage
+\chapter{Metodología}
+\label{cap:metodologia}
+\minitoc
+\vspace{1cm}
+\initial{A}quí empieza el capítulo 3. Al principio de cada capítulo podemos poner un pequeño párrafo (sinopsis) que describa qué hay en él. El capítulo de la metodología debe describir al detalle todo lo realizado en el proyecto. Es muy importante que sea claro y fácil de entender, pero sin perder detalle. Debe escribirse de forma que se le haga fácil de entender a una persona que no conoce el tema que se trata aquí (aunque sí tenga los conocimientos técnicos básicos para entenderlo si se le explica correctamente). Suele ser una parte difícil de escribir porque el autor conoce muy bien el proyecto y tiende a omitir partes que pueden no resultar tan obvias para una persona ajena al proyecto. Por eso, mientras se está escribiendo, es importante ponerse en la piel de una persona cuyo primer contacto con el proyecto es esta memoria, y escribir de forma que se entienda todo de forma clara. Para ello es aconsejable escribir, leer y repetir tantas veces como sea necesario, o pedir a una persona que no haya trabajado en el proyecto que lo lea y dé feedback de lo que no se entiende. 
+
+Es muy aconsejable escribirlo desde un punto de vista general al principio e ir yendo poco a poco a los puntos más específicos. Si el problema que trata de resolver este proyecto no se ha descrito con el suficiente detalle entre las secciones 1 y 2 (ya sea porque es un problema complejo o porque no daba lugar a definir todos los detalles en esas secciones) el lugar de hacerlo es al principio de este capítulo en una primera sección que describa el problema. El lector debe saber, primero, qué se quiere resolver, luego, cómo se ha resuelto. Después de esto, esta sección debe incluir una vista general de lo que se ha hecho. Es bueno apoyarse en un diagrama/esquema para ayudar al lector a entender el concepto/idea/framework realizado. Este esquema no debe incluir muchos detalles (éstos vendrán luego). Después se va a los detalles de forma ordenada. Es decir, evitando que el lector tenga que ir adelante y atrás en el texto. Es importante, tanto para el lector (para que lo entienda fácilmente), como para el autor (para que lo escriba mejor) que esta sección se apoye en imágenes todo lo necesario. Siempre y cuando esas imágenes aporten información. Un consejo para escribir esta parte de la memoria
+\newpage
+
+\clearemptydoublepage
+\chapter{Experimentos y Resultados}
+\label{cap:experimentos_resultados}
+\minitoc
+\vspace{1cm}
+\initial{A}quí empieza el capítulo 4. Al principio de cada capítulo podemos poner un pequeño párrafo (sinopsis) que describa qué hay en él. Ya se ha hablado de qué problema se trata en este proyecto y de por qué es importante, qué soluciones/trabajos relaciones existen, cuál es el contexto y el marco teórico detrás del proyecto, y qué se ha planteado y realizado de forma específica en el proyecto. Lo que falta es presentar unos experimentos que permitan discutir si lo que se ha llevado a cabo en el proyecto tiene sentido, funciona y cómo de bien/mal funciona de forma objetiva (esto siempre) y, a veces, también de forma subjetiva (mediante cuestionarios y métricas a diferentes sujetos). Esta sección debe ir acompañada de imágenes y enlaces a vídeos (si es que los hay) que permitan al lector entender cómo se han llevado a cabo los experimentos y qué resultados se han obtenido. Los experimentos deben describirse con tal nivel de detalle que permita a cualquier persona reproducirlos completamente y llegar a los mismos resultados. Los resultados se presentarán, normalmente, en forma de gráficas (en formato vectorial -- PDF) o tablas. En esta sección no deberían aparecer referencias bibliográficas (a no ser que se trate de algún aspecto muy específico de los experimentos que deba ser citado en este momento).
+\newpage
+
+\section{Entorno experimental}
+\label{sec:entorno_experimetal}
+
+\section{Protocolo de experimentación}
+\label{sec:protocolo}
+
+\section{Experimento 1}
+\label{sec:experimento_1}
+
+\section{Experimento 2}
+\label{sec:experimento_2}
+
+\section{Discusión de los resultados}
+\label{sec:discusion}
 
 
-\lipsum[2-10]
-
-
-
+\clearemptydoublepage
 \chapter{Conclusiones}
+\label{cap:conclusiones}
+\initial{A}quí empieza el capítulo de conclusiones. En este caso no añadimos el mini-índice, porque no tenemos (normalmente) secciones, ni la sinopsis. Se incluye una valoración final del proyecto en base a los objetivos del proyecto y los resultados obtenidos. Las conclusiones deben ser del proyecto, no tuyas personales en relación al TFE o a tu paso por el grado/máster.
+Esta sección es indispensable y debe reflejar, de forma clara y sencilla, las aportaciones del trabajo con unas conclusiones finales. Se deberían evitar frases como: \textit{Por lo tanto, se puede ver que se han cumplido los objetivos iniciales del proyecto.}
 
+Además, teniendo en cuenta el estado del arte y los resultados obtenido en el proyecto, se deben indicar las posibles líneas futuras de trabajo, describir las limitaciones, o proponer otras formas de abordar el problema.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%
 %
-%   BIBLIOGRAFÍA
+%      BIBLIOGRAPHY
 %
 %%%%%%%%%%%%%%%%%%%%%%%%
 \backmatter
 \bibliographystyle{IEEEtran}
 \refstepcounter{chapter}
-\bibliography{biblio}
+\bibliography{biblio.bib}
 \clearemptydoublepage
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%
 %
-%   APÉNDICES
+%     APPENDIXES
 %
 %%%%%%%%%%%%%%%%%%%%%%%%
-\input{Appendixes/appendix_A} %Colocamos los apendices
+\input{Appendixes/appendix_A} 
 
 \end{document}
