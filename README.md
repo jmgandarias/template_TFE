@@ -15,7 +15,7 @@ This file imports the packages used in the template and define the configuration
 This file change the default name of some items to have them in Spanish (e.g., Chapter = Capítulo, Figure = Figura), and defines some useful variables used along the project (e.g., TFE title, Author, Supervisor).
 
 ## Support
-This folder contains support and pre-thesis document
+This folder contains support and pre-thesis documents
 
 ## Images
 A folder that contains all the images of the project. If possible, try to use images in small size and vectorial format (i.e., PDF).
