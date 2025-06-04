@@ -1314,33 +1314,11 @@ FUNCTION {format.date}
   if$
 }
 
+% If you don't want to use the year in the electronic items (like @online or @misc) uncomment this:
 FUNCTION {format.date.electronic}
-{ month "month" bibinfo.check duplicate$ empty$
-  year  "year" bibinfo.check duplicate$ empty$
-    { swap$ 
-        { pop$ }
-        { "there's a month but no year in " cite$ * warning$
-        pop$ ")" * "(" swap$ *
-        this.to.prev.status
-        punct.no 'this.status.punct :=
-        space.normal 'this.status.space :=
-        quote.no 'this.status.quote :=
-        cap.yes  'status.cap :=
-        }
-      if$
-    }
-    { swap$ 
-        { swap$ pop$ ")" * "(" swap$ * }
-        { "(" swap$ * ", " * swap$ * ")" * }
-      if$
-    this.to.prev.status
-    punct.no 'this.status.punct :=
-    space.normal 'this.status.space :=
-    quote.no 'this.status.quote :=
-    cap.yes  'status.cap :=
-    }
-  if$
-}
+{ "" }
+
+% But if you want the year to appear 
 
 
 
@@ -2002,8 +1980,12 @@ FUNCTION {electronic}
   if.url.alt.interword.spacing
   format.authors output
   name.or.dash
-  format.date.electronic output
-  format.article.title.electronic output
+  format.article.title.electronic
+  year empty$
+    { "" }
+    { ", " year * }
+  if$
+  * output
   format.howpublished "howpublished" bibinfo.check output
   format.organization "organization" bibinfo.check output
   format.address "address" bibinfo.check output
